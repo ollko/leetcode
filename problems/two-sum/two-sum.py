@@ -23,9 +23,19 @@ def twoSum2(nums, target):
             print('twoSum1', t1-t0)
             return [i, h_table[complement]]
 
+
+def twoSum3(nums, target):
+        h_table = {}
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if h_table.get(complement) != None:
+                return [i, h_table[complement]]
+            h_table[nums[i]] = i
+
 def test():
-    assert twoSum([2, 7, 11, 15], 9) == [0, 1]
-    assert twoSum2([2, 7, 11, 15], 9) == [0, 1]
+    assert twoSum([2, 7, 11, 15], 9) in ([0, 1] , [1, 0])
+    assert twoSum2([2, 7, 11, 15], 9) in ([0, 1] , [1, 0])
+    assert twoSum3([2, 7, 11, 15], 9) in ([0, 1] , [1, 0])
     return ("test pass")
 
 print(test())
