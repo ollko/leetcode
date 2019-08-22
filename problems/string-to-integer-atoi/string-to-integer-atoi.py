@@ -61,4 +61,4 @@ def myAtoi1(str):
                 return -2**31
             else:
                 return res*sign
-        
+
